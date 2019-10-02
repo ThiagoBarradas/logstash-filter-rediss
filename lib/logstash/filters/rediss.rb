@@ -168,7 +168,7 @@ class LogStash::Filters::Rediss < LogStash::Filters::Base
             end
 
             if @setex
-                @redis.setex(event.get(@setex), event.get(@ttl), event.get(@source))
+                @redis.setex(event.get(@setex), @ttl, event.get(@source))
             end
 
             if @exists
