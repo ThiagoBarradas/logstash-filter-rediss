@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name            = 'logstash-filter-rediss'
-  s.version         = '1.0.1'
+  s.version         = '1.0.2'
   s.licenses        = ['MIT']
   s.summary         = "Redis (with SSL) Filter for Logstash"
   s.description     = "A Logstash filter plugin for storing and retrieving data from redis cache. This gem is a Logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/logstash-plugin install gem_name. This gem is not a stand-alone program."
