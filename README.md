@@ -53,7 +53,7 @@ filter {
         port => 6379
         db => 0
         password => "authtoken"
-		ttl => 300
+        ttl => 300
         setex => "[data][id]"
         source => "[data][content]"
     }
