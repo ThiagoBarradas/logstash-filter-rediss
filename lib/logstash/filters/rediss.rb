@@ -160,15 +160,18 @@ class LogStash::Filters::Rediss < LogStash::Filters::Base
             @redis ||= connect
 
             if @get
-                event.set(@target, @redis.get(event.get(@get)))
+                key = @cmd_key_is_formatted ? event.sprintf(@get) : event.get(@get)
+                event.set(@target, @redis.get(key))
             end
 
             if @set
-                @redis.set(event.get(@set), event.get(@source))
+                key = @cmd_key_is_formatted ? event.sprintf(@set) : event.get(@set)
+                @redis.set(key, event.get(@source))
             end
 
             if @setex
-                @redis.setex(event.get(@setex), @ttl, event.get(@source))
+                key = @cmd_key_is_formatted ? event.sprintf(@setex) : event.get(@setex)
+                @redis.setex(key, @ttl, event.get(@source))
             end
 
             if @exists
