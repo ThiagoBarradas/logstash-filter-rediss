@@ -1,0 +1,15 @@
+sudo: false
+language: ruby
+cache: bundler
+rvm:
+- jruby
+jdk: oraclejdk9
+script:
+- bundle exec rspec spec
+deploy:
+  provider: rubygems
+  on:
+    tags: true
+  gem: logstash-filter-rediss
+  api_key:
+    secure: MYeB/YVWiLK7G4Q8WeXMn7Ti5UmPfdqrdME0FU+J5iqXBitUZ46KRmYLM8yfep6OcBxUhm0iMPwFnEdMjvMndFWrcW83ffSn6Y5SdQB2XR+sAk0+NAKcHYBB2dPolGzWcGuwCdTgR/QBUqKUkz0elXS2scn7cZLbQUO+mFpOWo55IGN+sZuGkVj0N2jcx6kbxYbGYjw1OSgs5Rg0eriIe+k+dRr9I7YWO36+buYYU0OH9ZgS9DDOK3cP6QZUNZmcANx5fjCo4gQoALNoi1Fuayuoa8LUaW8m8oJgo3ok6ySjM3EygPMB/O7iVAvp0cLoI30oFJ4qW2KLeTBPEs6JbKtFCWKVgOdW1HzWfegXaXG06fz1pTZEGgT5+UiwE07NGLRu232p4Bbc2NZT+jwIADS7jqPXWFvGntBed76Hb16XSMzxE3v6zQ+6XAz+GKXG+bH0X7eQERMWU/O1lcOkRUKHDeLn3d3NI7wRB/Bgx2mMdoFZPBLU1tcHB+IClSZP8ikBSUppfAS4J3S1co86RKo6pDLN2Eba1P/Z8ykr7YDv+WJieM35Ui0ihC2KgKkvMTrVMnF2OceYqmwReammqY8F0CYZj6H0lfdUElvDfzi9zLUl+I7zCnpZUWFpLPMkpntB4J9s1K4meLkmeM+07CM4o5A5D6ym2172UgJUlEI=
