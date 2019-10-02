@@ -17,7 +17,7 @@ class LogStash::Filters::Rediss < LogStash::Filters::Base
     config :field, :validate => :string
 
     # Expire time in seconds for setex
-    config :ttl => :number
+    config :ttl, :validate => :number, :default => 60
 
     # Informs if the connection is to be made with SSL or not
     config :ssl, :validate => :boolean, :default => false

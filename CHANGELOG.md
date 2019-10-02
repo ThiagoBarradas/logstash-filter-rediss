@@ -1,4 +1,4 @@
-## 1.0.2
+## 1.0.3
  - Support for GET, HGET, SET, HSET, SETEX, EXISTS, DEL, SADD, SMEMBERS, SISMEMBER and SCARD;
  - Support SSL (redis or rediss protocol);
  - Support TTL (when you uses SETEX);
