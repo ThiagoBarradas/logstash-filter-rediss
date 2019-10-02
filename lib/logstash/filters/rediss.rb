@@ -90,7 +90,7 @@ class LogStash::Filters::Rediss < LogStash::Filters::Base
     config :del, :validate => :string
 
     # Sets the action. If has value, this action will be executed
-    # LLEN: get length of a list with key :llen
+    # LLEN: get length of a list with key :llen and save result in :target
     config :llen, :validate => :string
 
     # Sets the action. If has value, this action will be executed
